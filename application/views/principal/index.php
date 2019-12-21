@@ -1,0 +1,61 @@
+
+<div class="container-fluid">	
+	<div class="row">
+    <div class="col-12 col-md-11 mb-2"></div>
+	    <div class="col-12 col-md-1 mb-2">
+	      <button class="btn btn-md btn-info btn-block" id="btn_agregar_encuesta">Agregar</button>
+	      <!-- <button class="btn btn-md btn-secondary" id="btn_editar_encuesta">Editar</button>
+	      <button class="btn btn-md btn-danger"  id="btn_eliminar_encuesta">Eliminar</button> -->
+	    </div>
+	</div>
+	<div class="row">
+		<div class="col" id="container_table_encuestas">
+			<table class='table' id='id_tabla_encuestas'>
+              <thead class='thead-dark'>
+                <tr>
+                  <th scope='col'>ID</th>
+                  <th scope='col'>Nombre</th>
+                  <th scope='col'>Edad</th>
+                  <th scope='col'>Domicilio</th>
+                  <th scope='col'>Municipio</th>
+                  <th scope='col'>Rezago</th>
+                  <th scope='col'>Editar</th>
+                  <th scope='col'>Eliminar</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+		</div>
+	</div>	
+</div>	
+
+
+
+<div id='modal_get_encuesta' class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Encuesta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="contenedor_encuesta">
+
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-sm btn-primary float-right" id="btn_grabar_encuesta" type="submit" >Grabar</button>
+          </div>
+        </div>
+      </div>
+      <br>  
+    </div>
+  </div>
+</div>
+
+<script src="<?= base_url('assets/js/tabla.js') ?>"></script>
+<script src="<?= base_url('assets/js/inicio/inicio.js') ?>"></script>

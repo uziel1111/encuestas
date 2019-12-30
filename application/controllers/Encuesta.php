@@ -121,14 +121,14 @@ class Encuesta extends CI_Controller
                 
 
                 $str_table .= "<tr>
-                      <th scope='row'>{$aux}</th>
-                      <td>{$n_completo}</td>
-                      <td>{$edad}</td>
-                      <td>{$domicilio}</td>
-                      <td>{$municipio}</td>
-                      <td>{$rezago}</td>
-                      <td><button class = 'btn btn-md btn-secondary' onclick=obj_registro.edit_encuesta({$idencuesta})>Editar</button></td>
-                      <td><button class = 'btn btn-md btn-danger' onclick=obj_registro.delete_encuesta({$idencuesta}) >Eliminar</button></td>
+                      <th scope='row' class='align-middle'>{$aux}</th>
+                      <td class='align-middle'>{$n_completo}</td>
+                      <td class='align-middle'>{$edad}</td>
+                      <td class='align-middle'>{$domicilio}</td>
+                      <td class='align-middle'>{$municipio}</td>
+                      <td class='align-middle'>{$rezago}</td>
+                      <td class='align-middle'><button class = 'btn btn-md btn-secondary' onclick=obj_registro.edit_encuesta({$idencuesta})><i class='fas fa-edit'></i></button></td>
+                      <td class='align-middle'><button class = 'btn btn-md btn-danger' onclick=obj_registro.delete_encuesta({$idencuesta}) ><i class='fas fa-trash-alt'></i></button></td>
                     </tr>";
             }
             }else{

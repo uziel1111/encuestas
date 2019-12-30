@@ -1,16 +1,15 @@
 
-<div class="container-fluid">	
-	<div class="row">
-    <div class="col-12 col-md-11 mb-2"></div>
-	    <div class="col-12 col-md-1 mb-2">
-	      <button class="btn btn-md btn-info btn-block" id="btn_agregar_encuesta">Agregar</button>
+<div class="container">	
+	<div class="row justify-content-end">
+	    <div class="col-auto mb-2">
+	      <button class="btn btn-md btn-success rounded-pill" id="btn_agregar_encuesta"><i class="fas fa-plus-circle"></i> Agregar</button>
 	      <!-- <button class="btn btn-md btn-secondary" id="btn_editar_encuesta">Editar</button>
 	      <button class="btn btn-md btn-danger"  id="btn_eliminar_encuesta">Eliminar</button> -->
 	    </div>
 	</div>
 	<div class="row">
 		<div class="col" id="container_table_encuestas">
-			<table class='table' id='id_tabla_encuestas'>
+			<table class='table table-striped table-hover' id='id_tabla_encuestas'>
               <thead class='thead-dark'>
                 <tr>
                   <th scope='col'>ID</th>
@@ -57,5 +56,5 @@
   </div>
 </div>
 
-<script src="<?= base_url('assets/js/tabla.js') ?>"></script>
-<script src="<?= base_url('assets/js/inicio/inicio.js') ?>"></script>
+<!-- <script src="<?= base_url('assets/js/tabla.js') ?>"></script>
+<script src="<?= base_url('assets/js/inicio/inicio.js') ?>"></script> -->

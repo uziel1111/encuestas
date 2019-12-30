@@ -1,6 +1,6 @@
 
 
-<div class="container-fluid margintop50">	
+<div class="container-fluid">	
 	<div class="row">
 		<div class="col">
 			<form id="formulario_de_prueba" name="formulario_de_prueba" method="post"  action="">

@@ -19,7 +19,7 @@ $("#formulario_de_login" ).validate({
        },
        messages: {
                txt_cct_login: {
-                       required: "<span class='text-danger'>Introdusca CCT</span>",
+                       required: "<span class='text-danger'>Introduzca CCT</span>",
                },
                txt_turno_login: {
                        select_not_menos1: "<span class='text-danger'>Seleccione un turno</span>",

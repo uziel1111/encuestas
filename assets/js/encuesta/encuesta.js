@@ -49,8 +49,8 @@ $("#formulario_de_prueba" ).validate({
                },
                edad: {
                        required: "<span class='text-danger'>Introduzca una edad</span>",
-                       number: "<span class='text-danger'>Introduzca solo numeros</span>",
-                       maxlength: "<span class='text-danger'>Edad no valida</span>",
+                       number: "<span class='text-danger'>Introduzca solo números</span>",
+                       maxlength: "<span class='text-danger'>Edad no válida</span>",
                },
                domicilio: {
                        required: "<span class='text-danger'>Introduzca un domicilio</span>",
@@ -62,10 +62,10 @@ $("#formulario_de_prueba" ).validate({
                        required: "<span class='text-danger'>Introduzca una localidad</span>",
                },
                telefono: {
-                       required: "<span class='text-danger'>Introduzca un telefono</span>",
-                       number: "<span class='text-danger'>Introduzca solo numeros</span>",
-                       maxlength: "<span class='text-danger'>Numero de telefono no valido</span>",
-                       minlength: "<span class='text-danger'>Numero de telefono no valido</span>"
+                       required: "<span class='text-danger'>Introduzca un teléfono</span>",
+                       number: "<span class='text-danger'>Introduzca solo números</span>",
+                       maxlength: "<span class='text-danger'>Número de teléfono no válido</span>",
+                       minlength: "<span class='text-danger'>Número de teléfono no válido</span>"
                }
        },
        submitHandler: function(form) {

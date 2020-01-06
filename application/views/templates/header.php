@@ -8,14 +8,10 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?=base_url('assets/css/style.css')?>">
   
-  <!-- <script src="<?=base_url('assets/jquery/jquery-3.2.1.min.js')?>"></script>
+   <script src="<?=base_url('assets/jquery/jquery-3.2.1.min.js')?>"></script>
   <script src="<?=base_url('assets/jquery/jquery.validate.js')?>"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> 
-  <script src="<?=base_url('assets/js/load/loading.js')?>"></script>-->
+  <script src="<?=base_url('assets/js/load/loading.js')?>"></script>
   <link href="<?= base_url('assets/fonts/fontawesome5/css/all.css') ?>" rel="stylesheet" media="screen">
   <link rel="shortcut icon" href="<?= base_url('assets/img/logosin.png') ?>" />
 	<script type="text/javascript">
@@ -87,7 +83,7 @@
   <nav class="navbar navbar-expand-md navbar-light bg-light shadow">
   <div class="container d-flex justify-content-between">
   
-    <a class="navbar-brand" href="<?= base_url() ?>"><img src="<?php echo base_url('assets/img/censo-logo.png') ?>" class="img-fluid" alt="Escudo Sinaloa"></a>
+    <a class="navbar-brand"><img src="<?php echo base_url('assets/img/censo-logo.png') ?>" class="img-fluid" alt="Escudo Sinaloa"></a>
     <div class="justify-content-end">
    
     </div>

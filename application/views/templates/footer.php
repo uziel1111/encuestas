@@ -13,12 +13,11 @@
       </div>		
     </div>	
 <!-- Bootstrap core JS -->
-  <script src="<?=base_url('assets/jquery/jquery-3.2.1.min.js')?>"></script>
+  
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <!-- END Bootstrap core JS -->
 
-  <script src="<?=base_url('assets/jquery/jquery.validate.js')?>"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="<?=base_url('assets/js/load/loading.js')?>"></script>   

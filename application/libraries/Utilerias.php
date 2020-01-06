@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 define("ZONAHORARIA", "America/Mexico_City");
-define('DATOSUSUARIO', "datos_usuario");
+// define('DATOSUSUARIO', "datos_usuario");
 define('DATOCCT', "datos_cct");
 define('MESSAGEREQUEST', 'message_request');
 define('SUCCESMESSAGE', '1');
@@ -53,15 +53,6 @@ class Utilerias
         }
     }//get_cct_sesion()
 
-    public static function destroy_all_session($contexto)
-    {
-        // Vacio los datos
-        $contexto->session->unset_userdata(DATOSUSUARIO);
-        $contexto->session->unset_userdata(MENU);
-        $contexto->session->sess_destroy();
-        return true;
-
-    } // destroy_all_session()
 
     public static function get_terminosycondiciones()
     {
@@ -83,17 +74,24 @@ class Utilerias
 
 
     public static function verifica_sesion_redirige($contexto) {
-        if (!Utilerias::haySesionAbiertacct($contexto)) {
-            return false;
+        if (Utilerias::haySesionAbiertacct($contexto)) {
+            return true;
+            // redirect('Panel', 'refresh');
+        }else{
+            // return false;
+            redirect('/', 'refresh');
         }
-        return true;
+        
     }
 
     public static function destroy_all_session_cct($contexto){
+        // echo "vaciamos la sesion";die();
             // Vacio los datos
             $contexto->session->unset_userdata(DATOCCT);
             $contexto->session->sess_destroy();
+            // echo "murio la sesion"; die();
             return true;
+            
         } // destroy_all_session_cct()
     
     public static function get_notification_alert($mensaje, $tipo, $cerrar = true)

@@ -1,5 +1,5 @@
 
-<div class="container">	
+<div class="container">
 	<div class="row justify-content-end">
 	    <div class="col-auto mb-2">
 	      <button class="btn btn-md btn-success rounded-pill" id="btn_agregar_encuesta"><i class="fas fa-plus-circle"></i> Agregar</button>
@@ -12,7 +12,7 @@
 			<table class='table table-striped table-hover table-scrolled scroll-dark shadow' id='id_tabla_encuestas'>
               <thead class='thead-dark'>
                 <tr>
-                  <th scope='col'>ID</th>
+                  <th scope='col'>#</th>
                   <th scope='col'>Nombre</th>
                   <th scope='col'>Edad</th>
                   <th scope='col'>Domicilio</th>
@@ -27,8 +27,8 @@
               </tbody>
             </table>
 		</div>
-	</div>	
-</div>	
+	</div>
+</div>
 
 
 
@@ -51,7 +51,7 @@
           </div>
         </div>
       </div>
-      <br>  
+      <br>
     </div>
   </div>
 </div>

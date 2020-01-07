@@ -1,5 +1,5 @@
 
-<div class="container">	
+<div class="container">
 
   <div class="row no-gutters justify-content-md-center mt-4">
     <div class="col-md-5 info-img-1 shadow text-justify">
@@ -7,13 +7,13 @@
         <p class="card-text">
 			La comunidad escolar se extiende a las familias. En coordinación con el Instituto
 			Sinaloense para la Educación de los Adultos (ISEA) <b>queremos apoyar a los adultos
-			que no han concluido la educación básica</b>.			
+			que no han concluido la educación básica</b>.
 		</p>
         <p class="card-text">
 			Pregunta a los alumnos y personal de la escuela si algún pariente cercano que sea
 			mayor de edad <b>(padre, madre, abuelos, tíos, primos, etc.)</b> o conocidos no ha concluido
 			la primaria o la secundaria y durante el mes de enero regístralos por este medio. Un
-			representante del ISEA se pondrá en contacto con ellos.			
+			representante del ISEA se pondrá en contacto con ellos.
 		</p>
     </div>
     <div class="col-md-5 info-txt-1 shadow">
@@ -23,7 +23,7 @@
 	              <div class="form-label-group">
 	              	<label for="inputEmail">CCT</label>
 	                <input type="text" id="txt_cct_login" name="txt_cct_login" class="form-control" placeholder="cct">
-	                
+
 	              </div>
 
 	              <div class="form-label-group mt-3">
@@ -45,8 +45,8 @@
 
 
 	<!-- <div class="container">
-	    
+
 	</div> -->
-</div>	
-					
+</div>
+
 <script src="<?= base_url('assets/js/login.js') ?>"></script>

@@ -345,7 +345,37 @@ body > .container {
     background-color: #efefef;
 }
 /* End Modal Style 1 */
+/* Scrolled Table */
+@media (max-width: 1200px){
+  .table-scrolled {
+    margin: auto;
+    border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    background: #F5F5F5;
+  }
+  .scroll-dark::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+  }
+  
+  .scroll-dark::-webkit-scrollbar {
+    height: 6px;
+    background-color: #F5F5F5;
+  }
+  
+  .scroll-dark::-webkit-scrollbar-thumb {
+    background-color: #4d4d4d;
 
+  }
+  .scroll-dark:hover::-webkit-scrollbar-thumb {
+    background-color: #ea7066;
+  }
+}
+
+/* */
 .info-img-1{
   background-image: url("../img/loginbg.jpg");
   background-color: #cccccc;

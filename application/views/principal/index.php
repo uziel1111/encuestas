@@ -9,7 +9,7 @@
 	</div>
 	<div class="row">
 		<div class="col" id="container_table_encuestas">
-			<table class='table table-striped table-hover' id='id_tabla_encuestas'>
+			<table class='table table-striped table-hover table-scrolled scroll-dark shadow' id='id_tabla_encuestas'>
               <thead class='thead-dark'>
                 <tr>
                   <th scope='col'>ID</th>

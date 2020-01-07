@@ -36,7 +36,7 @@
 				    </select>
 				  </div>
 				  <hr/>
-	              <button class="btn btn-lg btn-success btn-block text-uppercase rounded-pill mt-3" type="submit" id="btn_inicia_sesion_encuestas">Iniciar sesiónn</button>
+	              <button class="btn btn-lg btn-success btn-block text-uppercase rounded-pill mt-3" type="submit" id="btn_inicia_sesion_encuestas">Iniciar sesión</button>
 	            <?= form_close();?>
 
     </div>

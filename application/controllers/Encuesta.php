@@ -81,6 +81,8 @@ class Encuesta extends CI_Controller
     public function get_encuestasxcct(){
         if(Utilerias::verifica_sesion_redirige($this)){
             $sesion = Utilerias::get_cct_sesion($this)[0];
+            // echo"<pre>";
+            // print_r($sesion); die();
             $encuestas = $this->Encuesta_model->get_encuestasxcct($sesion['id_cct']);
             $str_table = "";
             $apell1 = "";
@@ -92,29 +94,30 @@ class Encuesta extends CI_Controller
                 // print_r($encuesta); die();
                 $idencuesta = $encuesta['id_encuesta'];
                 $aux = $aux + 1 ;
-                $respuestas = explode(",", $encuesta['resp']);
+                $respuestas = explode("&", $encuesta['resp']);
                 
                 foreach ($respuestas as $respuesta) {
                 //     echo"<pre>";
-                // print_r($respuesta); die();
+                // print_r($respuesta); //die();
                     $descomp = explode("_", $respuesta);
-                    
+                //         echo"<pre>";
+                // print_r($descomp[1]); //die();
                     $id_pregunta = $descomp[0];
-                    $respuesta = $descomp[1];
+                    $respuesta_des = $descomp[1];
                     if($id_pregunta == 18){
-                        $nombre = $respuesta;
+                        $nombre = $respuesta_des;
                     }else if($id_pregunta == 19){
-                        $apell1 = $respuesta;
+                        $apell1 = $respuesta_des;
                     }else if($id_pregunta == 20){
-                        $apell2 = $respuesta;
+                        $apell2 = $respuesta_des;
                     }else if($id_pregunta == 21){
-                        $edad = $respuesta;
+                        $edad = $respuesta_des;
                     }else if($id_pregunta == 22){
-                        $domicilio = $respuesta;
+                        $domicilio = $respuesta_des;
                     }else if($id_pregunta == 24){
-                        $municipio = $this->Municipio_model->get_municipio($respuesta)[0]['municipio'];
+                        $municipio = $this->Municipio_model->get_municipio($respuesta_des)[0]['municipio'];
                     }else if($id_pregunta == 27){
-                        $rezago = $respuesta;
+                        $rezago = $respuesta_des;
                     }
                     $n_completo = $nombre." ".$apell1." ".$apell2;
                 }

@@ -32,7 +32,7 @@ class Encuesta_model extends CI_Model
     }
 
     function get_encuestasxcct($idcct){
-    	 $str_query = "SELECT  e.id_aplica AS id_encuesta, GROUP_CONCAT(CONCAT(r.id_pregunta, '_', r.respuesta)) AS resp FROM encuesta_x_cct e
+    	 $str_query = "SELECT  e.id_aplica AS id_encuesta, GROUP_CONCAT(CONCAT(r.id_pregunta, '_', r.respuesta) SEPARATOR '&') AS resp FROM encuesta_x_cct e
 		INNER JOIN respuesta r ON r.id_aplica = e.id_aplica
 		WHERE e.id_cct = ?
 		GROUP BY e.id_aplica";

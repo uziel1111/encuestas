@@ -141,7 +141,7 @@ class Encuesta extends CI_Controller
             }
             }else{
                 $str_table .= "<tr>
-                      <td colspan='6'><center><H4>Sin datos que mostrar</H4></center></td>
+                      <td colspan='8'><center><H4>Sin datos que mostrar</H4></center></td>
                     </tr>";
             }
             

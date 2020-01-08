@@ -118,7 +118,7 @@ Registro.prototype.delete_encuesta = function(idencuesta){
       title: '<strong>Alerta</strong>',
       icon: 'question',
       html:
-        '¿Estas seguro de eliminar esta encuesta?',
+        '¿Está seguro de eliminar esta encuesta?',
       showCloseButton: true,
       showCancelButton: true,
       focusConfirm: false,
@@ -140,7 +140,7 @@ Registro.prototype.delete_encuesta = function(idencuesta){
         .done(function(data) {
           Swal.fire(
             '¡Listo!',
-            'Se elimino correctamente',
+            'Se eliminó correctamente',
             'success'
           )
           // obj_tabla.id_select = undefined;

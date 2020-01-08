@@ -15,49 +15,17 @@ $("#btn_agregar_encuesta").click(function(e){
 });
 
 
-// $("#btn_eliminar_encuesta").click(function(){
-//   if(obj_tabla.id_select && obj_tabla.id_select != undefined){
-//     // Swal.fire({
-//     //   title: '<strong>Alerta</strong>',
-//     //   icon: 'question',
-//     //   html:
-//     //     '¿Estas seguro de eliminar esta encuesta?',
-//     //   showCloseButton: true,
-//     //   showCancelButton: true,
-//     //   focusConfirm: false,
-//     //   confirmButtonText:
-//     //     'SI',
-//     //   cancelButtonText:
-//     //     'NO',
-//     // }).then((result) => {
-//     //   if (result.value) {
-//     //     obj_registro.delete_encuesta();
-//     //     obj_registro.get_encuestas();
-//     //   }
-//     // })
-//   }else{
-//     Swal.fire(
-//       '¡Alerta!',
-//       'Seleccione una fila',
-//       'warning'
-//     )
-//   }
-  
-// });
 
-// $("#btn_editar_encuesta").click(function(e){
-//   e.preventDefault();
-//   // alert(obj_tabla.id_select);
-//   if(obj_tabla.id_select && obj_tabla.id_select != undefined){
-//     obj_registro.edit_encuesta();
-//   }else{
-//     Swal.fire(
-//       '¡Alerta!',
-//       'Seleccione una fila',
-//       'warning'
-//     )
-//   }
-// });
+$("#btn_cerrar_event").click(function(e){
+  $("#contenedor_encuesta").empty();
+  // $("#modal_get_encuesta").modal('hide');//ocultamos el modal
+  $('#modal_get_encuesta').modal('toggle');
+
+  $('body').removeClass('modal-open');//eliminamos la clase del body para poder hacer scroll
+  $('.modal-backdrop').remove();//eliminamos el backdrop del modal
+  location.reload();
+
+});
 
 Registro.prototype.get_encuesta = function(){
   $.ajax({

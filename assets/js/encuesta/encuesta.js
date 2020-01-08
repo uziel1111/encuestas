@@ -96,7 +96,6 @@ $("#btn_grabar_encuesta").click(function(e){
 
 Encuesta.prototype.set_encuesta = function(form){
   var formulario = $(form).serialize();
-  console.log("en la linea 99");
   $.ajax({
     url: base_url+'encuesta/set_encuesta',
     type: 'POST',
@@ -128,7 +127,8 @@ Encuesta.prototype.set_encuesta = function(form){
   .fail(function(e) {
     console.error("Al bajar la informacion"); console.table(e);
   })
-  .always(function() {
+  .always(function(e) {
+    e.stopPropagation();
     Swal.close();
   })
 }
@@ -167,6 +167,7 @@ Encuesta.prototype.edit_encuesta_save = function(form){
     console.error("Al bajar la informacion"); console.table(e);
   })
   .always(function() {
+    e.stopPropagation();
     // Swal.close();
   })
 }

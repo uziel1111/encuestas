@@ -37,7 +37,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Encuesta</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" id="btn_cerrar_event" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -55,6 +55,3 @@
     </div>
   </div>
 </div>
-
-<!-- <script src="<?= base_url('assets/js/tabla.js') ?>"></script>
-<script src="<?= base_url('assets/js/inicio/inicio.js') ?>"></script> -->

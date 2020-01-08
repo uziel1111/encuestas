@@ -11,13 +11,6 @@ class Encuesta_model extends CI_Model
     }// get_encuesta()
 
     function set_encuesta($idcct, $cct, $respuestas, $idencuesta){
-    	// INSERT INTO encuesta_x_cct (id_cct, id_encuesta) VALUES(1, 1);
-    	// echo $idcct."\n";
-    	// echo $cct."\n";
-    	// echo "<pre>";
-    	// print_r($respuestas);
-    	// echo $idencuesta."\n";
-    	// die();
     	$this->db->trans_start();
     	$str_query = "INSERT INTO encuesta_x_cct (id_cct, id_encuesta) VALUES(?, ?);";
 		$this->db->query($str_query, array($idcct, $idencuesta));

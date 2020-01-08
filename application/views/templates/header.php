@@ -11,7 +11,6 @@
    <script src="<?=base_url('assets/jquery/jquery-3.2.1.min.js')?>"></script>
   <script src="<?=base_url('assets/jquery/jquery.validate.js')?>"></script>
 
-  <script src="<?=base_url('assets/js/load/loading.js')?>"></script>
   <link href="<?= base_url('assets/fonts/fontawesome5/css/all.css') ?>" rel="stylesheet" media="screen">
   <link rel="shortcut icon" href="<?= base_url('assets/img/logosin.png') ?>" />
 	<script type="text/javascript">

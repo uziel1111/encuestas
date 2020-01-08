@@ -20,6 +20,9 @@ class Encuesta extends CI_Controller
             $preguntas = $this->Encuesta_model->get_encuesta($id_encuesta);
             $municipios = $this->Municipio_model->get_municipios();
             $data = array("preguntas" => $preguntas, "municipios" => $municipios);
+            // echo "<pre>";
+            // print_r($data);
+            // die();
             $string = $this->load->view('encuesta/encuesta', $data, TRUE);
             $response = array("vista" => $string);
             Utilerias::enviaDataJson(200, $response, $this);
@@ -84,6 +87,8 @@ class Encuesta extends CI_Controller
             // echo"<pre>";
             // print_r($sesion); die();
             $encuestas = $this->Encuesta_model->get_encuestasxcct($sesion['id_cct']);
+                //         echo"<pre>";
+                // print_r($encuestas); die();
             $str_table = "";
             $apell1 = "";
             $apell2 = "";

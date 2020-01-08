@@ -20,6 +20,8 @@ class Panel extends CI_Controller
         $data['turnos'] = $this->Cct_model->get_turnos();
         $this->cct = Utilerias::get_cct_sesion($this)[0];
                 $data['cct'] = $this->cct;
+                // echo "<pre>";
+                // print_r($data); die();
         Utilerias::pagina_basica($this,"principal/index", $data);
             }
 

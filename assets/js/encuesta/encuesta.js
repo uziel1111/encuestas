@@ -8,7 +8,18 @@ $(function() {
   return arg !== value;
  }, "Value must not equal arg.");
 
-
+  $.validator.addMethod(
+          "regex",
+          function(value, element, regexp) 
+          {
+              if (regexp.constructor != RegExp)
+                  regexp = new RegExp(regexp);
+              else if (regexp.global)
+                  regexp.lastIndex = 0;
+              return this.optional(element) || regexp.test(value);
+          },
+          "Please check your input."
+  );
 
 $("#formulario_de_prueba" ).validate({
   onclick:false, onfocusout: false, onkeypress:false, onkeydown:false, onkeyup:false,
@@ -24,9 +35,6 @@ $("#formulario_de_prueba" ).validate({
                        number: true,
                        maxlength: 2,
                },
-               domicilio: {
-                       required: true,
-               },
                municipio: {
                        valueNotEquals: "-1",
                },
@@ -34,10 +42,11 @@ $("#formulario_de_prueba" ).validate({
                        required: true,
                },
                telefono: {
-                       required: true,
-                       number: true,
-                       maxlength: 10,
-                       minlength: 7
+                       // required: true,
+                       // number: true,
+                       // maxlength: 10,
+                       // minlength: 7
+                       regex: /^[0-9 -]+$/
                }
        },
        messages: {
@@ -52,9 +61,6 @@ $("#formulario_de_prueba" ).validate({
                        number: "<span class='text-danger'>Introduzca solo números</span>",
                        maxlength: "<span class='text-danger'>Edad no válida</span>",
                },
-               domicilio: {
-                       required: "<span class='text-danger'>Introduzca un domicilio</span>",
-               },
                municipio: {
                        valueNotEquals: "<span class='text-danger'>Seleccione un municipio</span>",
                },
@@ -62,10 +68,11 @@ $("#formulario_de_prueba" ).validate({
                        required: "<span class='text-danger'>Introduzca una localidad</span>",
                },
                telefono: {
-                       required: "<span class='text-danger'>Introduzca un teléfono</span>",
-                       number: "<span class='text-danger'>Introduzca solo números</span>",
-                       maxlength: "<span class='text-danger'>Número de teléfono no válido</span>",
-                       minlength: "<span class='text-danger'>Número de teléfono no válido</span>"
+                       // required: "<span class='text-danger'>Introduzca un teléfono</span>",
+                       // number: "<span class='text-danger'>Introduzca solo números</span>",
+                       // maxlength: "<span class='text-danger'>Número de teléfono no válido</span>",
+                       // minlength: "<span class='text-danger'>Número de teléfono no válido</span>"
+                      regex: "<span class='text-danger'>Introduzca solo números</span>"
                }
        },
        submitHandler: function(form) {
@@ -89,6 +96,7 @@ $("#btn_grabar_encuesta").click(function(e){
 
 Encuesta.prototype.set_encuesta = function(form){
   var formulario = $(form).serialize();
+  console.log("en la linea 99");
   $.ajax({
     url: base_url+'encuesta/set_encuesta',
     type: 'POST',
@@ -99,23 +107,19 @@ Encuesta.prototype.set_encuesta = function(form){
     },
   })
   .done(function(data) {
-    Swal.fire(
-      '¡Listo!',
-      'Se inserto correctamente',
-      'success'
-    )
+    console.log(data);
     if(data.save == 1 || data.save == 'true'){
       Swal.fire(
       '¡Listo!',
       'Se inserto correctamente',
       'success'
-    )
+      );
     }else{
       Swal.fire(
       '¡Alerta!',
       'Algo salio mal',
       'error'
-    )
+      );
     }
     obj_encuesta.cerrar_modal('modal_get_encuesta');
     // obj_registro.get_encuestas();

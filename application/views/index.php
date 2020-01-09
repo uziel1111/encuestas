@@ -12,8 +12,10 @@
 		</p>
 		<p class="card-text">
 			Lo único que hay que hacer es registrar a estas personas en esta aplicación, para que un representante del ISEA se ponga en contacto con ellos. Al registrarla, le habrás ayudado a esa persona a alcanzar una meta que seguramente tendrá un impacto muy positivo en su vida y en la de su familia. 
-
-			¡Todos son bienvenidos!”
+			¡Todos son bienvenidos!
+		</p>
+		<p class="card-text">
+			¡Todos son bienvenidos!
 		</p>
     </div>
     <div class="col-md-5 info-txt-1 shadow">

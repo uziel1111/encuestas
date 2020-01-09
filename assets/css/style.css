@@ -45,7 +45,7 @@ body > .container {
 	position: relative;
 	font-size: 20px;
 	margin-top: 0px;
-	color: #b5d56a; 
+	color: #b5d56a;
 }
 .header .arrow-up {
   width: 0px;
@@ -65,7 +65,7 @@ body > .container {
     -ms-animation: color-change 2s infinite;
     animation: color-change 2s infinite;
   }
-  
+
   @-webkit-keyframes color-change {
     0% { color: #b5d56a; }
     50% { color: #ffffff; }
@@ -90,7 +90,7 @@ body > .container {
     0% { color: #b5d56a; }
     50% { color: #ffffff; }
     100% { color: #b5d56a; }
-  }  
+  }
 }
 
 .top-fixed {
@@ -325,7 +325,7 @@ body > .container {
     color: rgba(0, 0, 0, 1);
 }
 .modal-custom .modal-header > h3 {
-	font-family: 'Yanone Kaffeesatz', sans-serif;  
+	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 .modal-custom .modal-body {
 	background: #FFFFFF;
@@ -360,12 +360,12 @@ body > .container {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     background-color: #F5F5F5;
   }
-  
+
   .scroll-dark::-webkit-scrollbar {
     height: 6px;
     background-color: #F5F5F5;
   }
-  
+
   .scroll-dark::-webkit-scrollbar-thumb {
     background-color: #4d4d4d;
 
@@ -378,13 +378,13 @@ body > .container {
 /* */
 .info-img-1{
   background-image: url("../img/loginbg.jpg");
-  background-color: #cccccc;
+  background-color: #bbb;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   padding: 40px !important;
-  color: #D3D3D3;
+  color: #151515;
 }
 .info-txt-1{
 

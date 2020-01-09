@@ -23,7 +23,7 @@
 				<?php elseif ($pregunta['id_pregunta'] == 27): ?>
 
 					<label for="exampleFormControlSelect1"><?= $pregunta['pregunta']?></label>
-					<?php $opciones = explode(",", $pregunta['descr']); ?>
+					<?php $opciones = explode("&", $pregunta['descr']); ?>
 					<?php $cont = 1; foreach ($opciones as $key => $opcion):?>
 
 					<div class="form-check">

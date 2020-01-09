@@ -45,7 +45,7 @@
 		<div class="row">
     <?php if(isset($cct)) :?>
 			<div class="col-6">
-      <i class="fas fa-genderless color-animation"></i> <span class="text-white"><strong> <?= $cct['cct'] ?></strong>  <i class="fas fa-genderless color-animation"></i> <?= $cct['nombre_ct'] ?></span>
+      <i class="fas fa-genderless color-animation"></i> <span class="text-white"><strong> <?= $cct['cct'] ?></strong>   <i class="fas fa-genderless color-animation"></i>ESCUELA: <?= $cct['nombre_ct'] ?></span>
 			</div>
 			<div class="col-6 text-right">
 				<div class="btn-group">

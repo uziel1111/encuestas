@@ -61,11 +61,12 @@
 						<span class="align-middle"><?= $cct['turno'] ?></span>
 						<i class="fas fa-adjust align-middle" aria-hidden="true"></i>
 						<div class="dropdown-divider"></div>			  
-						<a class="btn btn-secondary rounded-pill btn-sm btn-block py-2" href="<?= site_url("Login/cerrar_sesion")?>">Cerrar sesión</a>					  
+											  
 					</p>
 
 				  </div>
 				</div>
+        <a class="btn btn-secondary rounded-pill btn-sm" href="<?= site_url("Login/cerrar_sesion")?>">Cerrar sesión</a>
       </div>
       <?php else : ?>
 			<div class="col-6">

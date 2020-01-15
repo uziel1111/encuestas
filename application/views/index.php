@@ -5,17 +5,29 @@
     <div class="col-md-5 info-img-1 shadow text-justify">
 	
         <p>
-			La educación debe ser una oportunidad para todos a lo largo de la vida. En la Secretaría de Educación Pública y Cultura de Sinaloa, y el Instituto Sinaloense para la Educación de los Adultos (ISEA), <strong> queremos apoyar a todas las personas que no han concluido la educación básica</strong>.
+			La educación debe ser una oportunidad para todos a lo largo de la vida. En la Secretaría
+			de Educación Pública y Cultura de Sinaloa, y el Instituto Sinaloense para la Educación de
+			los Adultos (ISEA), queremos apoyar a todas las personas que no han concluido la
+			educación básica.
 		</p>
         <p>
-			La escuela es una instancia privilegiada para ayudar a los adultos en este objetivo. Por ello, <strong>invitamos a toda la comunidad</strong> escolar a que pregunte a los alumnos y personal de la escuela si tienen algún familiar, amigo o conocido que sea mayor de edad y que no haya concluido la primaria o la secundaria. No importa en qué parte del estado viva esa persona. 
+			La escuela es una instancia privilegiada para ayudar a los adultos en este objetivo. Por
+			ello, invitamos a toda la comunidad escolar a que pregunte a los alumnos y personal de la
+			escuela si tienen algún familiar, amigo o conocido <strong>mayor de 15 años</strong> y que no haya
+			concluido la primaria o la secundaria. No importa en qué parte del estado viva esa
+			persona.
 		</p>
 		<p>
-			Lo único que hay que hacer es <strong>registrar a estas personas en esta aplicación</strong>, para que un representante del ISEA se ponga en contacto con ellos. Al registrarla, le habrás ayudado a esa persona a alcanzar una meta que seguramente tendrá un impacto muy positivo en su vida y en la de su familia. 
+			Lo único que hay que hacer es registrar a estas personas en esta aplicación, para que un
+			representante del ISEA <strong>o del Departamento de Educación para Adultos de Subsecretaría
+			de Educación Básica</strong> se ponga en contacto con ellos. Al registrarla, le habrás ayudado a
+			esa persona a alcanzar una meta que seguramente tendrá un impacto muy positivo en su
+			vida y en la de su familia. 
 		</p>
 		<p>
 		<strong>¡Todos son bienvenidos!</strong>
 		</p>
+		<p><a href="<?=base_url("data/Politicasprivacidad.pdf") ?>" style="color:white;" target="_blank">Consulta nuestra política de privacidad</a> <i class="far fa-hand-point-left"></i></p>
     </div>
     <div class="col-md-5 info-txt-1 shadow">
 	  <h5 class="card-title text-center"><i class="fas fa-sign-in-alt color-1"></i> Ingresar</h5>
@@ -39,7 +51,10 @@
 				  <hr/>
 	              <button class="btn btn-lg btn-success btn-block text-uppercase rounded-pill mt-3" type="submit" id="btn_inicia_sesion_encuestas">Iniciar sesión</button>
 	            <?= form_close();?>
-
+		<center><a href="<?=base_url("data/EncuestaRezagoSinaloa.pdf") ?>" style="color:black;" download="EncuestaRezagoSinaloa.pdf">
+		Encuesta Rezago Sinaloa 
+		<i class="fas fa-file-download"></i>
+		</a></center>
     </div>
   </div>
 

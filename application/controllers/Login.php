@@ -13,18 +13,14 @@ class Login extends CI_Controller
         $sesion = Utilerias::get_cct_sesion($this)[0];
     } // __construct()
 
-    public function index()
-    {
-            if(Utilerias::haySesionAbiertacct($this)){
-redirect('Panel', 'refresh');
-            }else{
-        $data = array();
-        $data['turnos'] = $this->Cct_model->get_turnos();
-        Utilerias::pagina_basica($this,"index", $data);                
-
+    public function index(){
+        if(Utilerias::haySesionAbiertacct($this)){
+            redirect('Panel', 'refresh');
+        }else{
+            $data = array();
+            $data['turnos'] = $this->Cct_model->get_turnos();
+            Utilerias::pagina_basica($this,"index", $data);                
         }
-
-
     }
 
     public function acceso(){

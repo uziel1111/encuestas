@@ -8,6 +8,10 @@ $(function() {
   return arg !== value;
  }, "Value must not equal arg.");
 
+ $.validator.addMethod("valuemin", function(value, element, arg){
+  return arg < value;
+ }, "Please check your input.");
+
   $.validator.addMethod(
           "regex",
           function(value, element, regexp) 
@@ -34,6 +38,10 @@ $("#formulario_de_prueba" ).validate({
                        required: true,
                        number: true,
                        maxlength: 2,
+                       valuemin: 15,
+               },
+               domicilio: {
+                       required: true,
                },
                municipio: {
                        valueNotEquals: "-1",
@@ -60,6 +68,10 @@ $("#formulario_de_prueba" ).validate({
                        required: "<span class='text-danger'>Introduzca una edad</span>",
                        number: "<span class='text-danger'>Introduzca solo números</span>",
                        maxlength: "<span class='text-danger'>Edad no válida</span>",
+                       valuemin: "<span class='text-danger'>La edad debe ser mayor a 15 años</span>",
+               },
+               domicilio: {
+                       required: "<span class='text-danger'>Introduzca Domicilio</span>",
                },
                municipio: {
                        valueNotEquals: "<span class='text-danger'>Seleccione un municipio</span>",

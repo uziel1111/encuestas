@@ -10,7 +10,7 @@
 				<?php if ($pregunta['id_pregunta'] == 24): ?>
 
 					<div class="form-group">
-				    <label for="exampleFormControlSelect1"><?= $pregunta['pregunta']?></label>
+				    <label for="exampleFormControlSelect1"><?= ($pregunta['obligatoria'] == 1)? '<span class=text-danger>*</span>': ''?> <?= $pregunta['pregunta']?></label>
 				    <input type="hidden" class="form-control" value="<?= $pregunta['id_pregunta']?>" name= "<?= $pregunta['etiqueta']?>_oculto">
 				    <select class="form-control textMayus" id="slt_encuesta_municipio" name="municipio">
 				      <option value="-1">SELECCIONE</option>
@@ -22,7 +22,7 @@
 
 				<?php elseif ($pregunta['id_pregunta'] == 27): ?>
 
-					<label for="exampleFormControlSelect1"><?= $pregunta['pregunta']?></label>
+					<label for="exampleFormControlSelect1"><?= ($pregunta['obligatoria'] == 1)? '<span class=text-danger>*</span>': ''?> <?= $pregunta['pregunta']?></label>
 					<?php $opciones = explode("&", $pregunta['descr']); ?>
 					<?php $cont = 1; foreach ($opciones as $key => $opcion):?>
 
@@ -38,7 +38,7 @@
 				<?php else: ?>
 
 				<div class="form-group">
-				    <label for="<?= $pregunta['etiqueta']?>"><?= $pregunta['pregunta']?></label>
+				    <label for="<?= $pregunta['etiqueta']?>"> <?= ($pregunta['obligatoria'] == 1)? '<span class=text-danger>*</span>': ''?> <?= $pregunta['pregunta']?></label>
 				    <input type="text" class="form-control textMayus" id="<?= $pregunta['etiqueta']?>" name= "<?= $pregunta['etiqueta']?>">
 				    <input type="hidden" class="form-control" value="<?= $pregunta['id_pregunta']?>" name= "<?= $pregunta['etiqueta']?>_oculto">
 				</div>
@@ -47,6 +47,10 @@
 
 			<?php endforeach; ?>
 		</form>
+		<p>
+			<span class=text-danger>* Datos obligatorios</span>
+		</p>
+		
 		</div>
 	</div>	
 </div>

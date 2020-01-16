@@ -122,13 +122,13 @@ Encuesta.prototype.set_encuesta = function(form){
     if(data.save == 1 || data.save == 'true'){
       Swal.fire(
       '¡Listo!',
-      'Se inserto correctamente',
+      'Se insertó correctamente',
       'success'
       );
     }else{
       Swal.fire(
       '¡Alerta!',
-      'Algo salio mal',
+      'Algo salió mal',
       'error'
       );
     }
@@ -137,7 +137,7 @@ Encuesta.prototype.set_encuesta = function(form){
     location.reload();
   })
   .fail(function(e) {
-    console.error("Al bajar la informacion"); console.table(e);
+    console.error("Al bajar la información"); console.table(e);
   })
   .always(function(e) {
     e.stopPropagation();
@@ -161,13 +161,13 @@ Encuesta.prototype.edit_encuesta_save = function(form){
     if(data.update == 1 || data.update == 'true'){
       Swal.fire(
       '¡Listo!',
-      'Se actualizo correctamente',
+      'Se actualizó correctamente',
       'success'
     )
     }else{
       Swal.fire(
       '¡Alerta!',
-      'Algo salio mal',
+      'Algo salió mal',
       'error'
     )
 
@@ -176,7 +176,7 @@ Encuesta.prototype.edit_encuesta_save = function(form){
     location.reload();
   })
   .fail(function(e) {
-    console.error("Al bajar la informacion"); console.table(e);
+    console.error("Al bajar la información"); console.table(e);
   })
   .always(function() {
     e.stopPropagation();

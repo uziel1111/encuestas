@@ -4,6 +4,10 @@ html {
   position: relative;
   min-height: 100%;
 }
+input, select, td, .form-check label { 
+    text-transform: uppercase;
+}
+
 body {
  font-family: 'Open Sans', sans-serif;
 	font-size: 14px;

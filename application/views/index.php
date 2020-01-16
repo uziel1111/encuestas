@@ -65,7 +65,7 @@
   <ul class="list-group">
   <li class="list-group-item list-group-item-action">
 	  	<a href="<?=base_url("data/EncuestaRezagoSinaloa.pdf") ?>" style="color:black; text-decoration: none; cursor: pointer;" download="EncuestaRezagoSinaloa.pdf">
-		  <i class="fas fa-pen-square text-muted"></i> Encuesta Rezago Sinaloa 
+		  <i class="fas fa-pen-square text-muted"></i> Formato de levantamiento 
 
 		</a>
 	</li>

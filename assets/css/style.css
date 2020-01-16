@@ -156,7 +156,17 @@ body > .container {
 .footer > .container span {
   font-size: 12px;
 }
+@media (max-width: 540px){
+  .footer > .container img {
+    height: 60px;
+    display: block;
+  }
+  
+  .footer > .container span {
+    font-size: 10px;
+  }
 
+}
 .footersecond {
   position: absolute;
   background-color: #343a40 !important;

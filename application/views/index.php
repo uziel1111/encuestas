@@ -27,20 +27,20 @@
 		<p>
 		<strong>¡Todos son bienvenidos!</strong>
 		</p>
-		<p><a href="<?=base_url("data/Politicasprivacidad.pdf") ?>" style="color:white;" target="_blank">Consulta nuestra política de privacidad</a> <i class="far fa-hand-point-left"></i></p>
+		<p><a href="<?=base_url("data/Politicasprivacidad.pdf") ?>" style="color:white;" target="_blank">CONSULTA NUESTRA POLÍTICA DE PRIVACIDAD</a> <i class="far fa-hand-point-left"></i></p>
     </div>
     <div class="col-md-5 info-txt-1 shadow">
-	  <h5 class="card-title text-center"><i class="fas fa-sign-in-alt color-1"></i> Ingresar</h5>
+	  <h5 class="card-title text-center"><i class="fas fa-sign-in-alt color-1"></i> INGRESAR</h5>
 	            <center class="mensaje-terminado"><?=$this->session->flashdata(MESSAGEREQUEST);?></center>
 	            <?= form_open('Login/acceso', array('id' =>'formulario_de_login'));?>
 	              <div class="form-label-group">
 	              	<label for="inputEmail">CCT</label>
-	                <input type="text" id="txt_cct_login" name="txt_cct_login" class="form-control" placeholder="cct">
+	                <input type="text" id="txt_cct_login" name="txt_cct_login" class="form-control" placeholder="CCT">
 
 	              </div>
 
 	              <div class="form-label-group mt-3">
-	              	<label for="inputPassword">Turno</label>
+	              	<label for="inputPassword">TURNO</label>
 	                <select class="form-control" id="txt_turno_login" name="txt_turno_login">
 				      <option value="-1">SELECCIONE</option>
 				      <?php foreach ($turnos as $turno):?>
@@ -49,10 +49,10 @@
 				    </select>
 				  </div>
 				  <hr/>
-	              <button class="btn btn-lg btn-success btn-block text-uppercase rounded-pill mt-3" type="submit" id="btn_inicia_sesion_encuestas">Iniciar sesión</button>
+	              <button class="btn btn-lg btn-success btn-block text-uppercase rounded-pill mt-3" type="submit" id="btn_inicia_sesion_encuestas">INICIAR SESIÓN</button>
 	            <?= form_close();?>
 		<center><a href="<?=base_url("data/EncuestaRezagoSinaloa.pdf") ?>" style="color:black;" download="EncuestaRezagoSinaloa.pdf">
-		Encuesta Rezago Sinaloa 
+		ENCUESTA REZAGO SINALOA 
 		<i class="fas fa-file-download"></i>
 		</a></center>
     </div>

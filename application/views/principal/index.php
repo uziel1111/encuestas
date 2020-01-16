@@ -2,7 +2,7 @@
 <div class="container">
 	<div class="row justify-content-end">
 	    <div class="col-auto mb-2">
-	      <button class="btn btn-md btn-success rounded-pill" id="btn_agregar_encuesta"><i class="fas fa-plus-circle"></i> Agregar</button>
+	      <button class="btn btn-md btn-success rounded-pill" id="btn_agregar_encuesta"><i class="fas fa-plus-circle"></i> AGREGAR</button>
 	      <!-- <button class="btn btn-md btn-secondary" id="btn_editar_encuesta">Editar</button>
 	      <button class="btn btn-md btn-danger"  id="btn_eliminar_encuesta">Eliminar</button> -->
 	    </div>
@@ -13,13 +13,13 @@
               <thead class='thead-dark'>
                 <tr>
                   <th scope='col'>#</th>
-                  <th scope='col'>Nombre</th>
-                  <th scope='col'>Edad</th>
-                  <th scope='col'>Domicilio</th>
-                  <th scope='col'>Municipio</th>
-                  <th scope='col'>Rezago</th>
-                  <th scope='col'>Editar</th>
-                  <th scope='col'>Eliminar</th>
+                  <th scope='col'>NOMBRE</th>
+                  <th scope='col'>EDAD</th>
+                  <th scope='col'>DOMICILIO</th>
+                  <th scope='col'>MUNICIPIO</th>
+                  <th scope='col'>REZAGO</th>
+                  <th scope='col'>EDITAR</th>
+                  <th scope='col'>ELIMINAR</th>
                 </tr>
               </thead>
               <tbody>
@@ -37,7 +37,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Encuesta</h5>
+        <h5 class="modal-title">ENCUESTA</h5>
         <button type="button" class="close" id="btn_cerrar_event" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -48,7 +48,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <button class="btn btn-sm btn-primary float-right" id="btn_grabar_encuesta" type="submit" >Grabar</button>
+            <button class="btn btn-sm btn-primary float-right" id="btn_grabar_encuesta" type="submit" >GRABAR</button>
           </div>
         </div>
       </div>

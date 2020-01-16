@@ -66,7 +66,7 @@
 
 				  </div>
 				</div>
-        <a class="btn btn-secondary rounded-pill btn-sm" href="<?= site_url("Login/cerrar_sesion")?>">Cerrar sesión</a>
+        <a class="btn btn-secondary rounded-pill btn-sm" href="<?= site_url("Login/cerrar_sesion")?>">CERRAR SESIÓN</a>
       </div>
       <?php else : ?>
 			<div class="col-6">

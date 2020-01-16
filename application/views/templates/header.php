@@ -70,7 +70,7 @@
     <div class="justify-content-end">
    
     </div>
-
+    <?php if(isset($cct)) :?>
     <div class="btn-group d-lg-none">
 				  <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<i class="fas fa-school"></i>
@@ -89,7 +89,7 @@
 
 				  </div>
 				</div>
-
+    <?php endif; ?>
 
 
    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

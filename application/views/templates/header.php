@@ -40,33 +40,15 @@
 		
         </div>
       </div>
-<div class="header bg-dark">
+      <div class="header bg-dark d-none d-lg-block">
 	<div class="container">
 		<div class="row">
     <?php if(isset($cct)) :?>
-			<div class="col-6">
-      <i class="fas fa-genderless color-animation"></i> <span class="text-white"><strong> <?= $cct['cct'] ?></strong>   <i class="fas fa-genderless color-animation"></i>ESCUELA: <?= $cct['nombre_ct'] ?></span>
+			<div class="col-6 header-info">
+      <i class="fas fa-genderless color-animation"></i> <span class="text-white"><strong> <?= $cct['cct'] ?></strong> <i class="fas fa-genderless color-animation"></i> <?= $cct['nombre_ct'] ?></span> <i class="fas fa-genderless color-animation"></i> <?= $cct['turno'] ?></span>
 			</div>
 			<div class="col-6 text-right">
-				<div class="btn-group">
-				  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<i class="fas fa-school"></i>
-				  </button>
-				  <div class="dropdown-menu dropdown-menu-right">
-				  <div class="arrow-up"></div>
-					<p>
-						<strong><?= $cct['nombre_ct'] ?></strong><br>
-						<?= $cct['cct'] ?>
-						<div class="dropdown-divider"></div>
-						<span class="align-middle"><?= $cct['turno'] ?></span>
-						<i class="fas fa-adjust align-middle" aria-hidden="true"></i>
-						<div class="dropdown-divider"></div>			  
-											  
-					</p>
-
-				  </div>
-				</div>
-        <a class="btn btn-secondary rounded-pill btn-sm" href="<?= site_url("Login/cerrar_sesion")?>">CERRAR SESIÓN</a>
+        <a class="btn btn-secondary rounded-pill btn-sm" href="<?= site_url("Login/cerrar_sesion")?>"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
       </div>
       <?php else : ?>
 			<div class="col-6">
@@ -88,9 +70,31 @@
     <div class="justify-content-end">
    
     </div>
+
+    <div class="btn-group d-lg-none">
+				  <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-school"></i>
+				  </button>
+				  <div class="dropdown-menu dropdown-menu-right">
+				  <div class="arrow-up"></div>
+					<p>
+						<strong><?= $cct['nombre_ct'] ?></strong><br>
+						<?= $cct['cct'] ?>
+						<div class="dropdown-divider"></div>
+						<span class="align-middle"><?= $cct['turno'] ?></span>
+						<i class="fas fa-adjust align-middle" aria-hidden="true"></i>
+						<div class="dropdown-divider"></div>			  
+            <a class="btn btn-dark rounded-pill btn-block" href="<?= site_url("Login/cerrar_sesion")?>"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>				  
+					</p>
+
+				  </div>
+				</div>
+
+
+
    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> 
     <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
     
       <ul class="navbar-nav">

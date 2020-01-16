@@ -24,19 +24,28 @@ body > .container {
 	font-size: 16px;
 	padding: 12px 0 4px 0;
 }
-.header .btn-group {
+.header .header-info {
+  font-size: 14px;
+  font-weight: bold;
+}
+.header .btn {
+  font-size: 11px;
+  font-weight: bold;
+}
+.navbar .btn-group {
 	z-index: 1049;
 }
-.header .btn-group button {
-	z-index: 1049;
-	border-radius: 60px;
-	padding: 0 5px 1px 5px;
+.navbar .btn-group button {
+  z-index: 1049;
+  border: 2px solid;
+	/* border-radius: 60px; */
+	padding: 10px;
 	margin-bottom: 5px;
 }
-.header .dropdown-toggle::after {
+.navbar .dropdown-toggle::after {
     display:none;
 }
-.header .dropdown-menu {
+.navbar .dropdown-menu {
 	font-size: 13px;
 	width: 260px;
 	margin-top: 9px;
@@ -45,13 +54,13 @@ body > .container {
 	text-align: right;
 	padding: 12px 10px 0 10px;
 }
-.header .dropdown-menu i {
+.navbar .dropdown-menu i {
 	position: relative;
 	font-size: 20px;
 	margin-top: 0px;
 	color: #b5d56a; 
 }
-.header .arrow-up {
+.navbar .arrow-up {
   width: 0px;
   height: 0px;
   border-left: 10px solid transparent;
@@ -114,19 +123,19 @@ body > .container {
 }
 @media (min-width: 992px){
   .navbar-brand img{
-    height: 100px;
+    height: 80px;
   }
 
 }
 @media (max-width: 992px){
   .navbar-brand img{
-    height: 80px;
+    height: 60px;
   }
 
 }
 .footer {
   position: absolute;
-  bottom: 40px;
+  bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   padding: 20px 0;
@@ -138,6 +147,14 @@ body > .container {
 .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.footer > .container img {
+  height: 80px;
+}
+
+.footer > .container span {
+  font-size: 12px;
 }
 
 .footersecond {

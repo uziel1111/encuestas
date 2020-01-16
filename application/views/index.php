@@ -27,9 +27,12 @@
 		<p>
 		<strong>¡Todos son bienvenidos!</strong>
 		</p>
-		<p><a href="<?=base_url("data/Politicasprivacidad.pdf") ?>" style="color:white;" target="_blank">CONSULTA NUESTRA POLÍTICA DE PRIVACIDAD</a> <i class="far fa-hand-point-left"></i></p>
-    </div>
+
+	</div>
+	
     <div class="col-md-5 info-txt-1 shadow">
+	<div class="row align-items-start">
+    <div class="col">
 	  <h5 class="card-title text-center"><i class="fas fa-sign-in-alt color-1"></i> INGRESAR</h5>
 	            <center class="mensaje-terminado"><?=$this->session->flashdata(MESSAGEREQUEST);?></center>
 	            <?= form_open('Login/acceso', array('id' =>'formulario_de_login'));?>
@@ -51,11 +54,35 @@
 				  <hr/>
 	              <button class="btn btn-lg btn-success btn-block text-uppercase rounded-pill mt-3" type="submit" id="btn_inicia_sesion_encuestas">INICIAR SESIÓN</button>
 	            <?= form_close();?>
-		<center><a href="<?=base_url("data/EncuestaRezagoSinaloa.pdf") ?>" style="color:black;" download="EncuestaRezagoSinaloa.pdf">
-		ENCUESTA REZAGO SINALOA 
-		<i class="fas fa-file-download"></i>
-		</a></center>
+				<hr/>
+		</div>
+	</div>
+	
+	<div class="row align-items-end" style="vertical-align:;">
+    <div class="col">
+	<div class="card text-white bg-success shadow">
+  <div class="card-body">
+  <ul class="list-group">
+  <li class="list-group-item list-group-item-action">
+	  	<a href="<?=base_url("data/EncuestaRezagoSinaloa.pdf") ?>" style="color:black; text-decoration: none; cursor: pointer;" download="EncuestaRezagoSinaloa.pdf">
+		  <i class="fas fa-pen-square text-muted"></i> Encuesta Rezago Sinaloa 
+
+		</a>
+	</li>
+  <li class="list-group-item list-group-item-action">
+	  <a href="<?=base_url("data/Politicasprivacidad.pdf") ?>"  style="color:black; text-decoration: none; cursor: pointer;" target="_blank">
+	  <i class="fas fa-award text-muted"></i> Política de Privacidad</a> 
+</li>
+</ul>
+
+		</div>
+</div>
     </div>
+	</div>
+
+	</div>
+	
+
   </div>
 
 

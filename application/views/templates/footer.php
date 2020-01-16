@@ -1,17 +1,26 @@
 
 <!-- Footer -->
 <footer class="footer">
-      <div class="container">  
-		<img src="<?php echo base_url('assets/img/seplogo-dark.png') ?>" alt="" class="img-fluid">  
-        <span class="text-muted"></span>
+      <div class="container"> 
+      <div class="row align-items-start">
+    <div class="col">
+    <img src="<?php echo base_url('assets/img/seplogo-dark.png') ?>" alt="" class="img-fluid"> 
+     </div>
+     <div class="col text-muted text-right">
+     <span><i class="fas fa-copyright text-success"></i> Algunos derechos reservados.</span>
+</div>     
+     </div> 
+
+ 
+
       </div>		
     </footer>
 	
-    <div class="footersecond">
+    <!-- <div class="footersecond">
       <div class="container">  
 		<span><i class="fas fa-copyright"></i> Algunos derechos reservados.</span>
       </div>		
-    </div>	
+    </div>	 -->
 <!-- Bootstrap core JS -->
   
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>

@@ -6,7 +6,7 @@
 	
         <p>
 			La educación debe ser una oportunidad para todos a lo largo de la vida. En la Secretaría
-			de Educación Pública y Cultura de Sinaloa, y el Instituto Sinaloense para la Educación de
+			de Educación Pública y Cultura de Sinaloa(SEPyC), y el Instituto Sinaloense para la Educación de
 			los Adultos (ISEA), queremos apoyar a todas las personas que no han concluido la
 			educación básica.
 		</p>
@@ -19,8 +19,7 @@
 		</p>
 		<p>
 			Lo único que hay que hacer es registrar a estas personas en esta aplicación, para que un
-			representante del ISEA <strong>o del Departamento de Educación para Adultos de Subsecretaría
-			de Educación Básica</strong> se ponga en contacto con ellos. Al registrarla, le habrás ayudado a
+			representante del ISEA <strong>o de la SEPyC </strong> se ponga en contacto con ellos. Al registrarla, le habrás ayudado a
 			esa persona a alcanzar una meta que seguramente tendrá un impacto muy positivo en su
 			vida y en la de su familia. 
 		</p>

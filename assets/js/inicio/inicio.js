@@ -124,8 +124,14 @@ Registro.prototype.get_encuestas = function(){
     // alert(data.haydatos);
     if(data.haydatos == true){
       $("#check_sin_registros_reg_completo").hide();
+      $("#btn_agregar_encuesta").show();
     }else{
       $("#check_sin_registros_reg_completo").show();
+      $("#btn_agregar_encuesta").hide();
+
+      if(!$("#check_sin_registros_reg").is(':checked')){
+        $("#btn_agregar_encuesta").show();
+      }
     }
     // obj_tabla.seleccion('id_tabla_encuestas');
     obj_tabla.id_select = undefined;

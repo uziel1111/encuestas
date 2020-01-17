@@ -92,6 +92,7 @@ class Encuesta extends CI_Controller
             $str_table = "";
             $apell1 = "";
             $apell2 = "";
+            $nombre ="";
             $haydatos = false;
             if(count($encuestas) > 0){
                 $aux = 0;
@@ -102,6 +103,7 @@ class Encuesta extends CI_Controller
                 $idencuesta = $encuesta['id_encuesta'];
                 $aux = $aux + 1 ;
                 $respuestas = explode("&", $encuesta['resp']);
+
                 
                 foreach ($respuestas as $respuesta) {
                 //     echo"<pre>";

@@ -27,6 +27,25 @@ $("#btn_cerrar_event").click(function(e){
 
 });
 
+$("#check_sin_registros_reg").change(function(){
+ if( $(this).is(':checked') ){
+      // Hacer algo si el checkbox ha sido seleccionado
+      if($("#haydatos").val() == "true"){
+        // obj_registro.delete_encuestas();
+        // $()
+      }else{
+        obj_registro.sin_registros_update(1);
+      }
+      $('#btn_agregar_encuesta').hide();
+  } else {
+      // Hacer algo si el checkbox ha sido deseleccionado
+      $('#btn_agregar_encuesta').show();
+      obj_registro.sin_registros_update(0);
+  }
+});
+
+
+
 Registro.prototype.get_encuesta = function(){
   $.ajax({
     url: base_url+'encuesta/get_encuesta',
@@ -101,6 +120,13 @@ Registro.prototype.get_encuestas = function(){
   .done(function(data) {
     $('#id_tabla_encuestas tbody').empty();
     $('#id_tabla_encuestas tbody').append(data.str_table);
+    $('#haydatos').val(data.haydatos);
+    // alert(data.haydatos);
+    if(data.haydatos == true){
+      $("#check_sin_registros_reg_completo").hide();
+    }else{
+      $("#check_sin_registros_reg_completo").show();
+    }
     // obj_tabla.seleccion('id_tabla_encuestas');
     obj_tabla.id_select = undefined;
 
@@ -132,7 +158,7 @@ Registro.prototype.delete_encuesta = function(idencuesta){
           url: base_url+'encuesta/delete_encuesta',
           type: 'POST',
           dataType: 'JSON',
-          data: {"id_encuesta": idencuesta},
+          data:{"id_encuesta": idencuesta},
           beforeSend: function(xhr) {
             Loading.loading("");
           },
@@ -157,3 +183,70 @@ Registro.prototype.delete_encuesta = function(idencuesta){
     })
   
 }
+
+// Registro.prototype.delete_encuestas = function(){
+//   Swal.fire({
+//       title: '<strong>Alerta</strong>',
+//       icon: 'question',
+//       html:
+//         'Si marca esta opción se eliminaran sus encuestas. ¿Desea continuar?',
+//       showCloseButton: true,
+//       showCancelButton: true,
+//       focusConfirm: false,
+//       confirmButtonText:
+//         'SI',
+//       cancelButtonText:
+//         'NO',
+//     }).then((result) => {
+//       if (result.value) {
+//         $.ajax({
+//           url: base_url+'encuesta/delete_encuesta',
+//           type: 'POST',
+//           dataType: 'JSON',
+//           data: "",
+//           beforeSend: function(xhr) {
+//             Loading.loading("");
+//           },
+//         })
+//         .done(function(data) {
+//           Swal.fire(
+//             '¡Listo!',
+//             'Se eliminó correctamente',
+//             'success'
+//           )
+//           // obj_tabla.id_select = undefined;
+//           location.reload();
+//         })
+//         .fail(function(e) {
+//           console.error("Al bajar la informacion"); console.table(e);
+//         })
+//         .always(function() {
+//           // Swal.close();
+//         })
+        
+//       }
+//     })
+  
+// }
+
+Registro.prototype.sin_registros_update = function(estatus){
+  $.ajax({
+    url: base_url+'encuesta/sin_registros_update',
+    type: 'POST',
+    dataType: 'JSON',
+    data: {"estatus": estatus },
+    beforeSend: function(xhr) {
+      Loading.loading("");
+    },
+  })
+  .done(function(data) {
+    alert("aca");
+  })
+  .fail(function(e) {
+    console.error("Al bajar la informacion"); console.table(e);
+  })
+  .always(function() {
+      Swal.close();
+  })
+}
+

@@ -92,8 +92,10 @@ class Encuesta extends CI_Controller
             $str_table = "";
             $apell1 = "";
             $apell2 = "";
+            $haydatos = false;
             if(count($encuestas) > 0){
                 $aux = 0;
+                $haydatos = true;
                 foreach ($encuestas as $encuesta) {
                 //         echo"<pre>";
                 // print_r($encuesta); die();
@@ -145,7 +147,7 @@ class Encuesta extends CI_Controller
                     </tr>";
             }
             
-            $response = array("str_table" => $str_table);
+            $response = array("str_table" => $str_table, "haydatos" => $haydatos);
             Utilerias::enviaDataJson(200, $response, $this);
             exit;
         }else{
@@ -157,6 +159,19 @@ class Encuesta extends CI_Controller
         if(Utilerias::verifica_sesion_redirige($this)){
             $idencuesta = $this->input->post('id_encuesta');
             $delete = $this->Encuesta_model->delete_encuestaxcct($idencuesta);
+            $response = array("delete" => $delete);
+            Utilerias::enviaDataJson(200, $response, $this);
+            exit;
+        }else{
+            redirect('Login/index');
+        }
+    }
+
+    public function delete_encuestas(){
+        if(Utilerias::verifica_sesion_redirige($this)){
+            echo"<pre>";
+            print_r($_POST);
+            die();
             $response = array("delete" => $delete);
             Utilerias::enviaDataJson(200, $response, $this);
             exit;
@@ -226,6 +241,27 @@ class Encuesta extends CI_Controller
             $response = array("update" => $save_encuesta_editada);
             Utilerias::enviaDataJson(200, $response, $this);
             exit;
+        }else{
+            redirect('Login/index');
+        }
+    }
+
+    public function sin_registros_update(){
+        if(Utilerias::verifica_sesion_redirige($this)){
+            
+            $sesion = Utilerias::get_cct_sesion($this)[0];
+            $id_cct = $sesion['id_cct'];
+            $estatus = $this->input->post("estatus");
+            // echo"<pre>";
+            // print_r($_POST);
+            // die();
+            $preguntas = $this->Encuesta_model->sin_registros_update($id_cct, intval($estatus));
+            // $data = array("preguntas" => $preguntas, "municipios" => $municipios);
+            
+            // $string = $this->load->view('encuesta/encuesta.php', $data, TRUE);
+            // $response = array("vista" => $string, "respuestas" => $respuestas, "id_encuesta_edit" => $idencuesta);
+            // Utilerias::enviaDataJson(200, $response, $this);
+            // exit;
         }else{
             redirect('Login/index');
         }

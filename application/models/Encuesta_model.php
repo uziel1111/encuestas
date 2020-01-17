@@ -80,4 +80,19 @@ class Encuesta_model extends CI_Model
     	
     }
 
+    function sin_registros_update($id_cct, $status){
+    	$fcreacion = date("Y-m-d H:i:s");
+
+    	$str_query = "SELECT * FROM sin_registro WHERE id_cct = ?";
+    	$registro = $this->db->query($str_query, array($id_cct))->result_array();
+
+    	if(count($registro) > 0){
+    		$str_query2 = "UPDATE sin_registro SET registro = ?, fec_ultimoreg = ? WHERE id_cct = ?";
+    		return $this->db->query($str_query2, array($status, $fcreacion, $id_cct));
+    	}else{	
+    		$str_query2 = "INSERT INTO sin_registro(id_cct, registro, fec_ultimoreg) VALUES(?, ?, ?)";
+    		return $this->db->query($str_query2, array($id_cct, $status, $fcreacion));
+    	}
+    }
+
 }// Prioridad_model

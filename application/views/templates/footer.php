@@ -34,7 +34,6 @@
 
 <!-- Encuesta JS -->
 <script src="<?= base_url('assets/js/tabla.js') ?>"></script>
-<script src="<?= base_url('assets/js/inicio/inicio.js') ?>"></script>
 <!-- END Encuesta JS -->
 </body>
 </html>

@@ -140,7 +140,7 @@ Encuesta.prototype.set_encuesta = function(form){
     console.error("Al bajar la información"); console.table(e);
   })
   .always(function(e) {
-    e.stopPropagation();
+    // e.stopPropagation();
     Swal.close();
   })
 }
@@ -179,7 +179,7 @@ Encuesta.prototype.edit_encuesta_save = function(form){
     console.error("Al bajar la información"); console.table(e);
   })
   .always(function() {
-    e.stopPropagation();
+    // e.stopPropagation();
     // Swal.close();
   })
 }

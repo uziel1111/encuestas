@@ -56,3 +56,5 @@
     </div>
   </div>
 </div>
+
+<script src="<?= base_url('assets/js/inicio/inicio.js') ?>"></script>

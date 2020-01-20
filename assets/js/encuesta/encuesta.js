@@ -120,28 +120,31 @@ Encuesta.prototype.set_encuesta = function(form){
   .done(function(data) {
     console.log(data);
     if(data.save == 1 || data.save == 'true'){
-      Swal.fire(
-      '¡Listo!',
-      'Se insertó correctamente',
-      'success'
-      );
+      Swal.fire({
+        icon: 'success',
+        title: '¡Gracias por ayudar a las familias de Sinaloa!',
+        showConfirmButton: false,
+      })
+      // obj_encuesta.cerrar_modal('modal_get_encuesta');
+      setTimeout(function(){
+        location.reload();
+      }, 1500);
+    
     }else{
       Swal.fire(
       '¡Alerta!',
       'Algo salió mal',
       'error'
       );
+      location.reload();
     }
-    obj_encuesta.cerrar_modal('modal_get_encuesta');
-    // obj_registro.get_encuestas();
-    location.reload();
   })
   .fail(function(e) {
     console.error("Al bajar la información"); console.table(e);
   })
   .always(function(e) {
     // e.stopPropagation();
-    Swal.close();
+    // Swal.close();
   })
 }
 

@@ -60,15 +60,15 @@ class Encuesta extends CI_Controller
             $rezago = $this->input->post('rezago');
             $rezago_id = $this->input->post('rezago_oculto');
             // $respuestas = array();
-            $respuestas = array(array("id_pregunta" => $nombre_id, "respuesta" => strtoupper($nombre)),
-                                array("id_pregunta" => $apellido1_id, "respuesta" => strtoupper($apellido1)),
-                                array("id_pregunta" => $apellido2_id, "respuesta" => strtoupper($apellido2)),
+            $respuestas = array(array("id_pregunta" => $nombre_id, "respuesta" => strtoupper(trim($nombre))),
+                                array("id_pregunta" => $apellido1_id, "respuesta" => strtoupper(trim($apellido1))),
+                                array("id_pregunta" => $apellido2_id, "respuesta" => strtoupper(trim($apellido2))),
                                 array("id_pregunta" => $edad_id, "respuesta" => $edad),
-                                array("id_pregunta" => $domicilio_id, "respuesta" => strtoupper($domicilio)),
-                                array("id_pregunta" => $colonia_id, "respuesta" => strtoupper($colonia)),
+                                array("id_pregunta" => $domicilio_id, "respuesta" => strtoupper(trim($domicilio))),
+                                array("id_pregunta" => $colonia_id, "respuesta" => strtoupper(trim($colonia))),
                                 array("id_pregunta" => $municipio_id, "respuesta" => $municipio),
-                                array("id_pregunta" => $localidad_id, "respuesta" => strtoupper($localidad)),
-                                array("id_pregunta" => $telefono_id, "respuesta" => $telefono),
+                                array("id_pregunta" => $localidad_id, "respuesta" => strtoupper(trim($localidad))),
+                                array("id_pregunta" => $telefono_id, "respuesta" => trim($telefono)),
                                 array("id_pregunta" => $rezago_id, "respuesta" => $rezago)
                             );
 
@@ -227,15 +227,15 @@ class Encuesta extends CI_Controller
             $rezago = $this->input->post('rezago');
             $rezago_id = $this->input->post('rezago_oculto');
             // $respuestas = array();
-            $respuestas = array(array("id_pregunta" => $nombre_id, "respuesta" => $nombre),
-                                array("id_pregunta" => $apellido1_id, "respuesta" => $apellido1),
-                                array("id_pregunta" => $apellido2_id, "respuesta" => $apellido2),
+            $respuestas = array(array("id_pregunta" => $nombre_id, "respuesta" => strtoupper(trim($nombre))),
+                                array("id_pregunta" => $apellido1_id, "respuesta" => strtoupper(trim($apellido1))),
+                                array("id_pregunta" => $apellido2_id, "respuesta" => strtoupper(trim($apellido2))),
                                 array("id_pregunta" => $edad_id, "respuesta" => $edad),
-                                array("id_pregunta" => $domicilio_id, "respuesta" => $domicilio),
-                                array("id_pregunta" => $colonia_id, "respuesta" => $colonia),
+                                array("id_pregunta" => $domicilio_id, "respuesta" => strtoupper(trim($domicilio))),
+                                array("id_pregunta" => $colonia_id, "respuesta" => strtoupper(trim($colonia))),
                                 array("id_pregunta" => $municipio_id, "respuesta" => $municipio),
-                                array("id_pregunta" => $localidad_id, "respuesta" => $localidad),
-                                array("id_pregunta" => $telefono_id, "respuesta" => $telefono),
+                                array("id_pregunta" => $localidad_id, "respuesta" => strtoupper(trim($localidad))),
+                                array("id_pregunta" => $telefono_id, "respuesta" => trim($telefono)),
                                 array("id_pregunta" => $rezago_id, "respuesta" => $rezago)
                             );
 

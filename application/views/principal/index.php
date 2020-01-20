@@ -2,10 +2,10 @@
 <div class="container">
 	<div class="row">
       <div class="col-4 mb-4 float-left">
-          <div class="form-check" id="check_sin_registros_reg_completo">
+          <!-- <div class="form-check" id="check_sin_registros_reg_completo">
             <input type="checkbox" class="form-check-input" id="check_sin_registros_reg" <?=($sinregistros == 1 )? 'checked': ''?> >
             <label class="form-check-label" for="check_sin_registros_reg">Sin datos que registrar</label>
-          </div>
+          </div> -->
       </div>
       <div class="col-6 mb-6">
       </div>

@@ -10,6 +10,22 @@ class Encuesta_model extends CI_Model
       return $this->db->query($str_query, array($id_encuesta))->result_array();
     }// get_encuesta()
 
+    function acceso_sistema($id_cct){
+    	$status = 1;
+    	$fcreacion = date("Y-m-d H:i:s");
+
+    	$str_query = "SELECT * FROM sin_registro WHERE id_cct = ?";
+    	$registro = $this->db->query($str_query, array($id_cct))->result_array();
+
+    	if(count($registro) > 0){
+    		$str_query2 = "UPDATE sin_registro SET registro = ?, fec_ultimoreg = ? WHERE id_cct = ?";
+    		return $this->db->query($str_query2, array($status, $fcreacion, $id_cct));
+    	}else{	
+    		$str_query2 = "INSERT INTO sin_registro(id_cct, registro, fec_ultimoreg) VALUES(?, ?, ?)";
+    		return $this->db->query($str_query2, array($id_cct, $status, $fcreacion));
+    	}
+    }
+
     function set_encuesta($idcct, $cct, $respuestas, $idencuesta){
     	$this->db->trans_start();
     	$str_query = "INSERT INTO encuesta_x_cct (id_cct, id_encuesta) VALUES(?, ?);";

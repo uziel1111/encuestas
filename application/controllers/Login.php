@@ -9,8 +9,9 @@ class Login extends CI_Controller
         parent::__construct();
         $this->load->library('Utilerias');
         $this->load->model('Cct_model');
+        $this->load->model('Encuesta_model');
         $this->cct = array();
-        $sesion = Utilerias::get_cct_sesion($this)[0];
+        $this->sesion = Utilerias::get_cct_sesion($this)[0];
     } // __construct()
 
     public function index(){
@@ -40,7 +41,15 @@ class Login extends CI_Controller
                 $datoscct = $this->Cct_model->getdatoscct($cct, $turno);
                 if(count($datoscct) > 0){
                     Utilerias::set_cct_sesion($this, $datoscct);
-                    redirect('Panel', 'refresh');
+                    $this->sesion = Utilerias::get_cct_sesion($this)[0];
+                    // echo "<pre>";
+                    // print_r($this->sesion);
+                    // die();
+                    $estatus = $this->Encuesta_model->acceso_sistema($this->sesion['id_cct']);
+                    if($estatus){
+                        redirect('Panel', 'refresh');
+                    }
+                    
                     // $this->cct = Utilerias::get_cct_sesion($this)[0];
                     // $data['cct'] = $this->cct;
                     // Utilerias::pagina_basica($this,"principal/index", $data);

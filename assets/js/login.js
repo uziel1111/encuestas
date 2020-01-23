@@ -38,3 +38,15 @@ $("#btn_inicia_sesion_encuestas").click(function(e){
   e.preventDefault();
   $("#formulario_de_login").submit();
 });
+
+$("#txt_cct_login").change(function(){
+  if($("#txt_cct_login").val() == "ADMIN@CENTRAL" || $("#txt_cct_login").val() == "admin@central"){
+    $("#contenedordeaccesouser").hide("slow", function() {
+      $("#contenedorpassword").show("slow");
+    });
+  }else{
+    $("#contenedorpassword").hide("slow", function() {
+      $("#contenedordeaccesouser").show("slow");
+    });
+  }
+});

@@ -8,6 +8,9 @@ define('MESSAGEREQUEST', 'message_request');
 define('SUCCESMESSAGE', '1');
 define('ERRORMESSAGE', '2');
 
+define('CENTRALUSER', '1');
+define('CCTUSER', '2');
+
 class Utilerias
 {
     public function __construct()

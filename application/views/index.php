@@ -41,7 +41,7 @@
 
 	              </div>
 
-	              <div class="form-label-group mt-3">
+	              <div class="form-label-group mt-3" id="contenedordeaccesouser">
 	              	<label for="inputPassword">TURNO</label>
 	                <select class="form-control" id="txt_turno_login" name="txt_turno_login">
 				      <option value="-1">SELECCIONE</option>
@@ -49,6 +49,10 @@
 				      <option value="<?= $turno['id_turno']?>"><?= $turno['turno']?></option>
 				      <?php endforeach; ?>
 				    </select>
+				  </div>
+				  <div class="form-label-group mt-3" id="contenedorpassword" style="display: none;">
+	              	<label for="inputPasswordcentral">CONTRASEÑA</label>
+	                <input type="password" id="inputPasswordcentral" name="inputPasswordcentral" class="form-control">
 				  </div>
 				  <hr/>
 	              <button class="btn btn-lg btn-success btn-block text-uppercase rounded-pill mt-3" type="submit" id="btn_inicia_sesion_encuestas">INICIAR SESIÓN</button>

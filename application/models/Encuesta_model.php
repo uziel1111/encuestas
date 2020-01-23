@@ -111,4 +111,29 @@ class Encuesta_model extends CI_Model
     	}
     }
 
+    function get_reporte_excel(){
+    	$str_query = "SELECT x.*, m.municipio AS nom_municipio
+						FROM(
+						SELECT
+						en.id_aplica, ct.cct, ct.turno, ct.nombre_ct,
+						MAX(CASE WHEN p.id_pregunta = 18 THEN r.respuesta ELSE '' END) AS 'NOMBRE(S)',
+						MAX(CASE WHEN p.id_pregunta = 19 THEN r.respuesta ELSE '' END) AS 'PRIMER APELLIDO',
+						MAX(CASE WHEN p.id_pregunta = 20 THEN r.respuesta ELSE '' END) AS 'SEGUNDO APELLIDO',
+						MAX(CASE WHEN p.id_pregunta = 21 THEN r.respuesta ELSE '' END) AS 'EDAD(más de 15 años)',
+						MAX(CASE WHEN p.id_pregunta = 22 THEN r.respuesta ELSE '' END) AS 'DOMICILIO(calle y número)',
+						MAX(CASE WHEN p.id_pregunta = 23 THEN r.respuesta ELSE '' END) AS 'COLONIA',
+						MAX(CASE WHEN p.id_pregunta = 24 THEN r.respuesta ELSE '' END) AS 'MUNICIPIO',
+						MAX(CASE WHEN p.id_pregunta = 25 THEN r.respuesta ELSE '' END) AS 'LOCALIDAD',
+						MAX(CASE WHEN p.id_pregunta = 26 THEN r.respuesta ELSE '' END) AS 'TELÉFONO',
+						MAX(CASE WHEN p.id_pregunta = 27 THEN r.respuesta ELSE '' END) AS 'REZAGO'
+						FROM encuesta_x_cct en
+						INNER JOIN cct ct ON en.id_cct=ct.id_cct
+						INNER JOIN respuesta r ON en.id_aplica= r.id_aplica
+						INNER JOIN pregunta p ON r.id_pregunta = p.id_pregunta
+						GROUP BY r.id_aplica
+						ORDER BY en.id_aplica, ct.cct, ct.id_turno) AS x
+						INNER JOIN municipio m ON x.MUNICIPIO=m.id_municipio";
+		return $this->db->query($str_query)->result_array();
+    }
+
 }// Prioridad_model

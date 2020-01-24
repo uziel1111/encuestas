@@ -99,20 +99,20 @@ class Reportes extends CI_Controller
             $arr_datos = $this->Encuesta_model->get_reporte_excel();
             $indice = 3;
             foreach ($arr_datos as $item) {
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('A'.$indice, utf8_encode($item['cct']));
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('B'.$indice, "  ".utf8_encode($item['turno']));
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('C'.$indice, "  ".utf8_encode($item['nombre_ct']));
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('D'.$indice, "  ".utf8_encode($item['NOMBRE(S)']));
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('E'.$indice, "  ".utf8_encode($item['PRIMER APELLIDO']));
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('F'.$indice, "  ".utf8_encode($item['SEGUNDO APELLIDO']));
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('G'.$indice, "  ".utf8_encode($item['EDAD(más de 15 años)']));
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('A'.$indice, ($item['cct']));
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('B'.$indice, "  ".($item['turno']));
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('C'.$indice, "  ".($item['nombre_ct']));
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('D'.$indice, "  ".($item['NOMBRE(S)']));
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('E'.$indice, "  ".($item['PRIMER APELLIDO']));
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('F'.$indice, "  ".($item['SEGUNDO APELLIDO']));
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('G'.$indice, "  ".($item['EDAD(más de 15 años)']));
 
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('H'.$indice, "  ".utf8_encode($item['DOMICILIO(calle y número)']));
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('I'.$indice, "  ".utf8_encode($item['nom_municipio']));
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('J'.$indice, "  ".utf8_encode($item['COLONIA']));
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('K'.$indice, "  ".utf8_encode($item['LOCALIDAD']));
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('L'.$indice, "  ".utf8_encode($item['TELÉFONO']));
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('M'.$indice, "  ".utf8_encode($item['REZAGO']));
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('H'.$indice, "  ".($item['DOMICILIO(calle y número)']));
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('I'.$indice, "  ".($item['nom_municipio']));
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('J'.$indice, "  ".($item['COLONIA']));
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('K'.$indice, "  ".($item['LOCALIDAD']));
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('L'.$indice, "  ".($item['TELÉFONO']));
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('M'.$indice, "  ".($item['REZAGO']));
                     $indice++;
             }
 

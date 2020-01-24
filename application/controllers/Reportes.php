@@ -11,7 +11,7 @@ class Reportes extends CI_Controller
         $this->load->library('My_PHPExcel');
         $this->load->model('Encuesta_model');
         $this->cct = array();
-        $this->sesion = Utilerias::get_cct_sesion($this)[0];
+        $this->sesion = Utilerias::get_cct_sesion($this);
     } // __construct()
 
     function get_reporte_excel() {
@@ -132,8 +132,8 @@ class Reportes extends CI_Controller
             $obj_phpexcel->getActiveSheet()->getColumnDimension('L')->setAutoSize(true);
             $obj_phpexcel->getActiveSheet()->getColumnDimension('M')->setAutoSize(true);
 
-
-            $nombre_excel = "reporte_encuestas.xlsx";
+            $fcreacion = date("Y-m-d_H-i-s");
+            $nombre_excel = "reporte_encuestas_{$fcreacion}.xlsx";
 
             $obj_phpexcel->getActiveSheet()->mergeCells('A1:M1');
             $obj_phpexcel->getActiveSheet()->getStyle('A1:M1')->applyFromArray($this->styleArray_titulo);

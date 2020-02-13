@@ -82,8 +82,8 @@ class Reportes extends CI_Controller
 
             $obj_phpexcel = new My_PHPExcel();
             $obj_phpexcel->getActiveSheet()->SetCellValue('A1', 'REPORTE DE CAPTURA DE ENCUESTAS');
-            $obj_phpexcel->getActiveSheet()->SetCellValue('A2', 'ID CCT');
-            $obj_phpexcel->getActiveSheet()->SetCellValue('B2', 'FECHA DE REGISTRO');
+            $obj_phpexcel->getActiveSheet()->SetCellValue('A2', 'Id registro');
+            $obj_phpexcel->getActiveSheet()->SetCellValue('B2', 'Fecha de registro');
             $obj_phpexcel->getActiveSheet()->SetCellValue('C2', 'CCT');
             $obj_phpexcel->getActiveSheet()->SetCellValue('D2', 'Turno');
             $obj_phpexcel->getActiveSheet()->SetCellValue('E2', 'Nombre cct');
@@ -101,7 +101,7 @@ class Reportes extends CI_Controller
             $arr_datos = $this->Encuesta_model->get_reporte_excel();
             $indice = 3;
             foreach ($arr_datos as $item) {
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('A'.$indice, ($item['id_cct']));    
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('A'.$indice, ($item['id_aplica']));    
                     $obj_phpexcel->getActiveSheet()->SetCellValue('B'.$indice, ($item['fec_ultimoreg']));
                     $obj_phpexcel->getActiveSheet()->SetCellValue('C'.$indice, ($item['cct']));
                     $obj_phpexcel->getActiveSheet()->SetCellValue('D'.$indice, "  ".($item['turno']));

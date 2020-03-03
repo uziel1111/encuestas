@@ -10,7 +10,7 @@
   
    <script src="<?=base_url('assets/jquery/jquery-3.2.1.min.js')?>"></script>
   <script src="<?=base_url('assets/jquery/jquery.validate.js')?>"></script>
-  
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
   <link href="<?= base_url('assets/fonts/fontawesome5/css/all.css') ?>" rel="stylesheet" media="screen">
   <link rel="shortcut icon" href="<?= base_url('assets/img/logosin.png') ?>" />

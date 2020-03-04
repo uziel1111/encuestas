@@ -12,6 +12,10 @@ $("#btn_genera_estadisticas").click(function(e){
 		obj_cfcentral.get_estadisticas();
 });
 
+$("#tipo_estadisticas").change(function(){
+	obj_cfcentral.get_tipo_estadistica();
+});
+
 function Centraluser(){
    _thisccentral = this;
 }
@@ -42,6 +46,28 @@ var formulario = $(form).serialize();
     $("#contenedor_estadisticas").append(data.vista1);
     // contenedor_estadisticas_pie
     $("#contenedor_estadisticas_pie").append(data.vista2);
+  })
+  .fail(function(e) {
+    console.error("Al bajar la información"); console.table(e);
+  })
+  .always(function(e) {
+    Swal.close();
+  })
+};
+
+Centraluser.prototype.get_tipo_estadistica = function (){
+	var tipo_estadistica = $("#tipo_estadisticas").val();
+  $.ajax({
+    url: base_url+'estadisticas/get_tipo_estadisticas',
+    type: 'POST',
+    dataType: 'JSON',
+    data: {"tipo_estadisticas": tipo_estadistica},
+    beforeSend: function(xhr) {
+      Loading.loading("");
+    },
+  })
+  .done(function(data) {
+    $("#contenedor_formulario_por_tipo").append(data.vista);
   })
   .fail(function(e) {
     console.error("Al bajar la información"); console.table(e);

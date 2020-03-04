@@ -1,4 +1,5 @@
 <?php
+ini_set('memory_limit','-1');
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Reportes extends CI_Controller
@@ -101,7 +102,7 @@ class Reportes extends CI_Controller
             $arr_datos = $this->Encuesta_model->get_reporte_excel();
             $indice = 3;
             foreach ($arr_datos as $item) {
-                    $obj_phpexcel->getActiveSheet()->SetCellValue('A'.$indice, ($item['id_aplica']));    
+                    $obj_phpexcel->getActiveSheet()->SetCellValue('A'.$indice, ($item['id_aplica']));
                     $obj_phpexcel->getActiveSheet()->SetCellValue('B'.$indice, ($item['fec_ultimoreg']));
                     $obj_phpexcel->getActiveSheet()->SetCellValue('C'.$indice, ($item['cct']));
                     $obj_phpexcel->getActiveSheet()->SetCellValue('D'.$indice, "  ".($item['turno']));

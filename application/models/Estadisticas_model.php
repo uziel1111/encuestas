@@ -6,12 +6,16 @@ class Estadisticas_model extends CI_Model
     }
 
     function get_rezago($rezago, $emin, $emax, $municipio){
-      $where_edad = "";
+      $where_rezago = "1 = 1";
+      if($rezago != ""){
+        $where_rezago = " rezago LIKE '%{$rezago}%' ";
+      }
+      $where_municipio = "";
       if($municipio != -1){
-        $where_edad = " AND id_municipio = {$municipio}";
+        $where_municipio = " AND id_municipio = {$municipio}";
       }
 
-      $str_query = "SELECT COUNT(encuestas.id_aplica) FROM (
+      $str_query = "SELECT COUNT(encuestas.id_aplica) as total, encuestas.rezago FROM (
       SELECT x.*, m.id_municipio
       FROM(
       SELECT
@@ -23,11 +27,13 @@ class Estadisticas_model extends CI_Model
       INNER JOIN respuesta r ON en.id_aplica= r.id_aplica
       INNER JOIN pregunta p ON r.id_pregunta = p.id_pregunta
       GROUP BY r.id_aplica
-      ORDER BY en.id_aplica) AS X
+      ORDER BY en.id_aplica) AS x
       INNER JOIN municipio m ON x.MUNICIPIO=m.id_municipio) AS encuestas
-      WHERE rezago = ? AND edad BETWEEN ? AND ? {$where_edad}
+      WHERE {$where_rezago} AND edad BETWEEN ? AND ? {$where_municipio} 
+      GROUP BY encuestas.rezago
       ";
-      return $this->db->query($str_query, array($rezago, $emin, $emax))->result_array();
+      // echo $str_query; die();
+      return $this->db->query($str_query, array($emin, $emax))->result_array();
     }
 
 }// Prioridad_model

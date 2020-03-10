@@ -1,21 +1,21 @@
-<form>
+<!-- <form> -->
   <div class="row">
     <div class="col-2">
       <div class="form-group">
         <label for="edad_minima">Edad minima</label>
-        <input type="email" class="form-control" id="edad_minima" placeholder="15">
+        <input type="number" class="form-control" id="edad_minima" value="15" min="15" max="99">
       </div>
     </div>
     <div class="col-2">
       <div class="form-group">
         <label for="edad_maxima">Edad maxima</label>
-        <input type="email" class="form-control" id="edad_maxima" placeholder="30">
+        <input type="number" class="form-control" id="edad_maxima" value="30" min="15" max="99">
       </div>
     </div>
     <div class="col-4">
       <div class="form-group">
         <label for="exampleFormControlSelect1">Rezago</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" id="select_tipo_rezago">
           <option>SELECCIONE</option>
           <option value="1">Concluyó la primaria, pero no la secundaria</option>
           <option value="2">No sabe leer ni escribir</option>
@@ -27,8 +27,8 @@
     <div class="col-2">
       <div class="form-group">
         <label for="exampleFormControlSelect1">Municipio</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-          <option>SELECCIONE</option>
+        <select class="form-control" id="select_municipio">
+          <option value="-1">SELECCIONE</option>
           <?php foreach ($municipios as $municipio): ?>
             <option value="<?=$municipio['id_municipio']?>"><?=$municipio['municipio']?></option>
           <?php endforeach ?>
@@ -36,10 +36,10 @@
       </div>
     </div>
     <div class="col-2">
-      <button class="float-right btn btn-md btn-success rounded-pill" id="btn_genera_estadisticas"><i class="fas fa-plus-circle"></i> Ver estadisticas</button>
+      <button class="float-right btn btn-md btn-success rounded-pill" id="btn_get_estadisticas"><i class="fas fa-plus-circle"></i> Ver estadisticas</button>
     </div>
   </div>
-</form>
+<!-- </form> -->
 
   <script type="text/javascript">
     google.charts.load("current", {packages:['corechart']});
@@ -72,3 +72,5 @@
   }
   </script>
 <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+
+<script src="<?= base_url('assets/js/estadisticas/rezago.js') ?>"></script>

@@ -52,14 +52,38 @@ class Estadisticas extends CI_Controller
         }
     }
 
-    public function get_rezago_datos(){
+    public function get_rezago(){
         if(Utilerias::verifica_sesion_redirige($this)){
             $rezago = $this->input->post("rezago");
-            $emin = $this->input->post("rezago");
-            $emax = $this->input->post("rezago");
-            $id_municipio = $this->input->post("rezago");
+            $emin = $this->input->post("edadmin");
+            $emax = $this->input->post("edadmax");
+            $id_municipio = $this->input->post("idmunicipio");
+            switch ($rezago) {
+                case '1':
+                    $rezago = "Concluyó la primaria, pero no la secundaria";
+                    break;
+                case '2':
+                    $rezago = "No sabe leer ni escribir";
+                    break;
+                case '3':
+                    $rezago = "Lee y escribe, pero no ha concluido la primaria";
+                    break;
+                case '4':
+                $rezago = "";
+                    break;
+            }
             $datos_rezago = $this->Estadisticas_model->get_rezago($rezago, $emin, $emax, $id_municipio);
-            $response = array("vista" => $string);
+            
+            $rezagos = array();
+            foreach ($datos_rezago as $rezago) {
+                $rezago_aux = array();
+                array_push($rezago_aux, $rezago['rezago']);
+                array_push($rezago_aux, (float)$rezago['total']);
+                array_push($rezago_aux, "#b87333");
+                array_push($rezagos, $rezago_aux);
+            }
+
+            $response = array("rezago" => $rezagos);
             Utilerias::enviaDataJson(200, $response, $this);
             exit;
         }

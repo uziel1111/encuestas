@@ -54,33 +54,43 @@ class Estadisticas extends CI_Controller
 
     public function get_rezago(){
         if(Utilerias::verifica_sesion_redirige($this)){
-            $rezago = $this->input->post("rezago");
+            $idrezago = $this->input->post("rezago");
             $emin = $this->input->post("edadmin");
             $emax = $this->input->post("edadmax");
             $id_municipio = $this->input->post("idmunicipio");
-            switch ($rezago) {
+            switch ($idrezago) {
                 case '1':
-                    $rezago = "Concluyó la primaria, pero no la secundaria";
+                    $str_rezago = "Concluyó la primaria, pero no la secundaria";
+                    $color = "#085C9A";
                     break;
                 case '2':
-                    $rezago = "No sabe leer ni escribir";
+                    $str_rezago = "No sabe leer ni escribir";
+                    $color = "#F07A40";
                     break;
                 case '3':
-                    $rezago = "Lee y escribe, pero no ha concluido la primaria";
+                    $str_rezago = "Lee y escribe, pero no ha concluido la primaria";
+                    $color = "#5AC51D";
                     break;
                 case '4':
-                $rezago = "";
+                $str_rezago = "";
                     break;
             }
-            $datos_rezago = $this->Estadisticas_model->get_rezago($rezago, $emin, $emax, $id_municipio);
+            $datos_rezago = $this->Estadisticas_model->get_rezago($str_rezago, $emin, $emax, $id_municipio);
             
             $rezagos = array();
+            $colores = array("#085C9A", "#F07A40", "#5AC51D");
+            $cont = 0;
             foreach ($datos_rezago as $rezago) {
                 $rezago_aux = array();
                 array_push($rezago_aux, $rezago['rezago']);
                 array_push($rezago_aux, (float)$rezago['total']);
-                array_push($rezago_aux, "#b87333");
+                if($idrezago == 4 || $idrezago == '4'){
+                    array_push($rezago_aux, $colores[$cont]);
+                }else{
+                    array_push($rezago_aux, $color);
+                }
                 array_push($rezagos, $rezago_aux);
+                $cont++;
             }
 
             $response = array("rezago" => $rezagos);

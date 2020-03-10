@@ -1,4 +1,5 @@
 $(function() {
+  google.charts.load("current", {packages:['corechart']});
     obj_rezago = new Rezago();
     
 });
@@ -14,6 +15,7 @@ function Rezago(){
 
 
 Rezago.prototype.get_rezago = function (edadmin, edadmax, rezago, idmunicipio){
+  var estadisticas = new Array(["Element", "Cantidad", { role: "style" } ]);
 	$.ajax({
 	    url: base_url+'estadisticas/get_rezago',
 	    type: 'POST',
@@ -24,22 +26,11 @@ Rezago.prototype.get_rezago = function (edadmin, edadmax, rezago, idmunicipio){
 	    },
 	  })
 	  .done(function(data) {
-	    // $("#contenedor_estadisticas").append(data.vista1);
-	    // contenedor_estadisticas_pie
-	    // $("#contenedor_estadisticas_pie").append(data.vista2);
-	    console.log(data.rezago);
-	    
-
-	    // console.log(data.rezago[0]['total'], data.rezago[0]['rezago']));
-	    console.log([
-        ["Element", "Cantidad", { role: "style" } ],
-        data.rezago
-      ]);
-	    var data = google.visualization.arrayToDataTable([
-        ["Element", "Cantidad", { role: "style" } ],
-        [" Concluyó la primaria, pero no la secundaria", 1, "#b87333"]
-      ]);
-
+      // estadisticas = new Array(["Element", "Cantidad", { role: "style" } ]);
+      $.each(data.rezago, function( index, value ) {
+        estadisticas.push(value);
+      });
+	    var data = google.visualization.arrayToDataTable(estadisticas);
       var view = new google.visualization.DataView(data);
       view.setColumns([0, 1,
                        { calc: "stringify",
@@ -49,7 +40,7 @@ Rezago.prototype.get_rezago = function (edadmin, edadmax, rezago, idmunicipio){
                        2]);
 
       var options = {
-        title: "Density of Precious Metals, in g/cm^3",
+        title: "Numero de personas por tipo de rezago",
         width: 600,
         height: 400,
         bar: {groupWidth: "95%"},

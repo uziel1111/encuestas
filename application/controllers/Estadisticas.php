@@ -99,7 +99,27 @@ class Estadisticas extends CI_Controller
         }
     }
 
+    public function get_por_participacion(){
+        if(Utilerias::verifica_sesion_redirige($this)){
+        $datos_por_particiapacion = $this->Estadisticas_model->get_por_participacion();
+        $participaciones = array();
+        $colores = array("#085C9A", "#F07A40", "#5AC51D");
+        $cont = 0;
+        foreach ($datos_por_particiapacion as $participacion) {
+                $parti_aux = array();
+                array_push($parti_aux, $participacion['turno']);
+                array_push($parti_aux, (float)$participacion['total']);
+                // array_push($parti_aux, $colores[$cont]);
+                array_push($participaciones, $parti_aux);
+                $cont++;
+            }
+
+            $response = array("participacion" => $participaciones);
+            Utilerias::enviaDataJson(200, $response, $this);
+            exit;
+    }
 
 
 
+    }
 } // class

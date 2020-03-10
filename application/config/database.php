@@ -75,10 +75,14 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
+	// 'hostname' => '208.91.198.53',
+	// 'username' => 'proye7nb_pe_encu',
+	// 'password' => 'pe_encu.123',
+	// 'database' => 'proye7nb_encuesta_pe_pruebas',
 	'hostname' => '208.91.198.53',
 	'username' => 'proye7nb_pe_encu',
 	'password' => 'pe_encu.123',
-	'database' => 'proye7nb_encuesta_pe_pruebas',
+	'database' => 'proye7nb_encuesta_pe',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

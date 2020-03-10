@@ -36,4 +36,26 @@ class Estadisticas_model extends CI_Model
       return $this->db->query($str_query, array($emin, $emax))->result_array();
     }
 
+    function get_por_participacion(){
+      $str_query = "
+              SELECT COUNT(encuestas.id_aplica) AS total, encuestas.turno FROM (
+              SELECT x.*, m.id_municipio
+              FROM(
+              SELECT
+              en.id_aplica, ct.turno,
+              MAX(CASE WHEN p.id_pregunta = 21 THEN r.respuesta ELSE '' END) AS 'edad',
+              MAX(CASE WHEN p.id_pregunta = 24 THEN r.respuesta ELSE '' END) AS 'municipio',
+              MAX(CASE WHEN p.id_pregunta = 27 THEN r.respuesta ELSE '' END) AS 'rezago'
+              FROM encuesta_x_cct en
+              INNER JOIN respuesta r ON en.id_aplica= r.id_aplica
+              INNER JOIN pregunta p ON r.id_pregunta = p.id_pregunta
+              INNER JOIN cct ct ON ct.id_cct = en.id_cct
+              GROUP BY r.id_aplica
+              ORDER BY en.id_aplica) AS x
+              INNER JOIN municipio m ON x.MUNICIPIO=m.id_municipio) AS encuestas
+              GROUP BY encuestas.turno
+      ";
+      return $this->db->query($str_query)->result_array();
+    }
+
 }// Prioridad_model
